@@ -143,19 +143,19 @@ public class PropertiesActivity extends BaseActivity {
             }
         });
 
-        // fading stuff
-        CheckBox fadeEnabled = (CheckBox) findViewById(R.id.fade_enabled);
-        fadeEnabled.setChecked(true);
-        fadeEnabled.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        // behind fading stuff
+        CheckBox behindFadeEnabled = (CheckBox) findViewById(R.id.behind_fade_enabled);
+        behindFadeEnabled.setChecked(true);
+        behindFadeEnabled.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 getSlidingMenu().setBehindFadeEnabled(isChecked);
             }
         });
-        SeekBar fadeDeg = (SeekBar) findViewById(R.id.fade_degree);
-        fadeDeg.setMax(1000);
-        fadeDeg.setProgress(666);
-        fadeDeg.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        SeekBar behindFadeDeg = (SeekBar) findViewById(R.id.behind_fade_degree);
+        behindFadeDeg.setMax(1000);
+        behindFadeDeg.setProgress(666);
+        behindFadeDeg.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
             }
@@ -167,6 +167,33 @@ public class PropertiesActivity extends BaseActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 getSlidingMenu().setBehindFadeDegree((float) seekBar.getProgress() / seekBar.getMax());
+            }
+        });
+
+        // above fading stuff
+        CheckBox aboveFadeEnabled = (CheckBox) findViewById(R.id.above_fade_enabled);
+        aboveFadeEnabled.setChecked(true);
+        aboveFadeEnabled.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                getSlidingMenu().setAboveFadeEnabled(isChecked);
+            }
+        });
+        SeekBar aboveFadeDeg = (SeekBar) findViewById(R.id.above_fade_degree);
+        aboveFadeDeg.setMax(1000);
+        aboveFadeDeg.setProgress(666);
+        aboveFadeDeg.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                getSlidingMenu().setAboveFadeDegree((float) seekBar.getProgress() / seekBar.getMax());
             }
         });
     }
