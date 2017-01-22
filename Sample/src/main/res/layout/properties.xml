@@ -188,18 +188,43 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:text="Fade"
+                android:text="Behind Fade"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <CheckBox
-                android:id="@+id/fade_enabled"
+                android:id="@+id/behind_fade_enabled"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Enabled?" />
         </LinearLayout>
 
         <SeekBar
-            android:id="@+id/fade_degree"
+            android:id="@+id/behind_fade_degree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/list_padding">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="Above Fade"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <CheckBox
+                android:id="@+id/above_fade_enabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enabled?" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/above_fade_degree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
