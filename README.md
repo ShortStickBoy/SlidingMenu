@@ -1,10 +1,19 @@
-# SlidingMenu
+SlidingMenu
+=======
 SlidingMenu is an Open Source Android library that allows developers to easily create applications with sliding menus like those made popular in the Google+, YouTube, and Facebook apps.
 
-## ScreenShot
+DownLoad
+--------
+```groovy
+compile 'com.github.ShortStickBoy:SlidingMenu:V1.0.0'
+```
+
+ScreenShot
+--------
  ![sample](./screenshot/sample.gif)
 
-## License
+License
+=======
 
     Copyright 2017 sunzn
 
