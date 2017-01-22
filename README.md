@@ -6,8 +6,8 @@ ScreenShot
 --------
  ![sample](./screenshot/sample.gif)
 
-### Simple Example
-
+Simple Example
+--------
 ```java
 public class BaseActivity extends SlidingFragmentActivity {
 
