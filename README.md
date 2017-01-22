@@ -9,43 +9,28 @@ ScreenShot
 Simple Example
 --------
 ```java
-public class BaseActivity extends SlidingFragmentActivity {
-
-    private int mTitleRes;
-    protected ListFragment mFrag;
-
-    public BaseActivity(int titleRes) {
-        mTitleRes = titleRes;
-    }
+public class SlidingExample extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.attach);
 
-        setTitle(mTitleRes);
+        // set the content view
+        setContentView(R.layout.content);
 
-        // set the Behind View
-        setBehindContentView(R.layout.menu_frame);
-        if (savedInstanceState == null) {
-            FragmentTransaction t = this.getSupportFragmentManager().beginTransaction();
-            mFrag = new SampleListFragment();
-            t.replace(R.id.menu_frame, mFrag);
-            t.commit();
-        } else {
-            mFrag = (ListFragment) this.getSupportFragmentManager().findFragmentById(R.id.menu_frame);
-        }
+        // configure the SlidingMenu
+        SlidingMenu menu = new SlidingMenu(this);
+        menu.setAboveFadeEnabled(true);
+        menu.setAboveFadeDegree(0.35f);
+        menu.setShadowWidthRes(R.dimen.shadow_width);
+        menu.setShadowDrawable(R.drawable.shadow);
+        menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+        menu.setBehindFadeEnabled(false);
+        menu.setBehindFadeDegree(0.35f);
+        menu.setTouchModeAbove(SlidingMenu.TOUCH_MODE_FULLSCREEN);
+        menu.setTouchModeBehind(SlidingMenu.TOUCH_MODE_FULLSCREEN);
 
-        // customize the SlidingMenu
-        SlidingMenu sm = getSlidingMenu();
-        sm.setAboveFadeEnabled(true);
-        sm.setAboveFadeDegree(0.35f);
-        sm.setShadowWidthRes(R.dimen.shadow_width);
-        sm.setShadowDrawable(R.drawable.shadow);
-        sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);
-        sm.setBehindFadeEnabled(false);
-        sm.setBehindFadeDegree(0.35f);
-        sm.setTouchModeAbove(SlidingMenu.TOUCH_MODE_FULLSCREEN);
-        sm.setTouchModeBehind(SlidingMenu.TOUCH_MODE_FULLSCREEN);
     }
 
 }
