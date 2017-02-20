@@ -93,7 +93,7 @@ public class SlidingMenu extends RelativeLayout {
         /**
          * On open.
          */
-        public void onOpen();
+        void onOpen();
     }
 
     /**
@@ -112,7 +112,7 @@ public class SlidingMenu extends RelativeLayout {
         /**
          * On opened.
          */
-        public void onOpened();
+        void onOpened();
     }
 
     /**
@@ -131,7 +131,7 @@ public class SlidingMenu extends RelativeLayout {
         /**
          * On close.
          */
-        public void onClose();
+        void onClose();
     }
 
     /**
@@ -150,7 +150,7 @@ public class SlidingMenu extends RelativeLayout {
         /**
          * On closed.
          */
-        public void onClosed();
+        void onClosed();
     }
 
     /**
@@ -164,7 +164,7 @@ public class SlidingMenu extends RelativeLayout {
          * @param canvas      the canvas
          * @param percentOpen the percent open
          */
-        public void transformCanvas(Canvas canvas, float percentOpen);
+        void transformCanvas(Canvas canvas, float percentOpen);
     }
 
     /**
@@ -485,10 +485,10 @@ public class SlidingMenu extends RelativeLayout {
             setSlidingEnabled(false);
             mViewAbove.setCustomViewBehind(null);
             mViewAbove.setCurrentItem(1);
-            //			mViewBehind.setCurrentItem(0);
+            //	mViewBehind.setCurrentItem(0);
         } else {
             mViewAbove.setCurrentItem(1);
-            //			mViewBehind.setCurrentItem(1);
+            //	mViewBehind.setCurrentItem(1);
             mViewAbove.setCustomViewBehind(mViewBehind);
             setSlidingEnabled(true);
         }
